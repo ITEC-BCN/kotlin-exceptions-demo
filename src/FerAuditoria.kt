@@ -6,8 +6,11 @@ fun main(){
     do {
         print("Escriu el nom del teu professor@: ")
         nomProfe = readLine()!!
-        //TODO: Afegir un try-catch per protegit la crida al mètode auditar()
-        auditar(nomProfe)
+        try {
+            auditar(nomProfe)
+        }catch(a: AuditoriaException){
+            println("No passa res, tot passa.")
+        }
         //
     }while (nomProfe.lowercase() != "sortir")
 }
